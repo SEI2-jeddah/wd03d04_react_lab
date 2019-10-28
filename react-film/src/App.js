@@ -10,9 +10,11 @@ function App() {
   <div className="film-library">
   <div className="film-list">
   <FilmListing db={TMDB}/>
+ 
   </div>
   <div className="film-details">
   <FilmDetails />
+ 
   </div>
   </div>
   );
