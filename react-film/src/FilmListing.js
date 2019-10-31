@@ -9,22 +9,23 @@ export default class FilmListing extends Component {
       filter: "all"
     };
   }
+
   handleFilterClick = filter => {
-    this.setState ({
-      filter: filter
+    this.setState({
+      //es 6 syntax for making a key with the same name as the variable
+      filter
     });
     console.log(filter);
   };
   render() {
-    let allFilms = this.props.fillm.map((film, index) => (
+    let moviesArr = this.state.filter === "faves" ? "faves" : "films";
+    const allFilms = this.props[moviesArr].map((film) => (
       <FilmRow
-        filmTitle={film.title}
-        filmId={film.id}
-        filmDate={new Date().getFullYear(film.release_date)}
-        filmPoster={film.poster_path}
+        film={film}
+        key={film.id}
         onFaveToggle={() => this.props.onFaveToggle(film)}
-        isFave= {this.props.faves.includes(film)}
-
+        isFave={this.props.faves.includes(film)}
+        handleDetailsClick={() => this.props.handleDetailsClick(film)}
       />
     ));
     return (
@@ -38,7 +39,7 @@ export default class FilmListing extends Component {
             onClick={() => this.handleFilterClick("all")}
           >
             ALL
-            <span className="section-count">{this.props.fillm.length}</span>
+            <span className="section-count">{this.props.films.length}</span>
           </div>
           <div
             className={`film-list-filter ${
@@ -50,7 +51,6 @@ export default class FilmListing extends Component {
             <span className="section-count">{this.props.faves.length}</span>
           </div>
         </div>
-
         {allFilms}
       </div>
     );
