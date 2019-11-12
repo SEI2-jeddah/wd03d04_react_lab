@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { Component } from "react";
 
-const FilmPoster = (props) => {
-    let posterPath = `https://image.tmdb.org/t/p/w500${props.filmPoster}`
+export default class FilmPoster extends Component {
+  posterPath = `https://image.tmdb.org/t/p/w500${this.props.filmPoster}`;
+  render() {
     return (
-        <div>
-            <img src={posterPath} alt="" />
-            
-        </div>
-    )
+      <div>
+        <img src={this.posterPath} alt="" />
+      </div>
+    );
+  }
 }
-
-export default FilmPoster
