@@ -36,6 +36,7 @@ figure {
 
 .film-list {
   position: relative;
+  
   flex: 1 0 33.333333%;
   height: 100%;
   padding: 3.6em 0 0;
@@ -89,10 +90,12 @@ figure {
 .film-summary {
   padding: 0.5em 1.5em;
   background-color: white;
+  
 }
 
 .film-summary > h1 {
   margin-bottom: 0.35em;
+  text-align: center;
 }
 
 .film-summary > p {
@@ -100,6 +103,8 @@ figure {
   line-height: 1.35;
   font-weight: 200;
   margin-top: 0;
+  text-align: center;
+  
 }
 
 .section-title {
