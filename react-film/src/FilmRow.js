@@ -4,7 +4,7 @@ import Fave from "./Fave";
 export default class FilmRow extends Component {
   render() {
     return (
-      <div className="film-row" onClick={this.handleDetailsClick}>
+      <div className="film-row" onClick={this.props.handleDetailsClick}>
         <FilmPoster filmPoster={this.props.film.poster_path} />
         <div className="film-summary">
           <h1>{this.props.film.title}</h1>
